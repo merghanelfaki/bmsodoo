@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <!--  #########3    types items           ##########                          -->
+    <!-- Typesitems action -->
+    <record id="building_details_action" model="ir.actions.act_window">
+        <field name="name">Building Details</field>
+        <field name="res_model">building.details</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Typesitems list view -->
+    <record id="building_details_tree_view" model="ir.ui.view">
+        <field name="name">building.details.tree.view</field>
+        <field name="model">building.details</field>
+        <field name="arch" type="xml">
+            <tree string="Building Details" >
+                <field name="name"/>
+                <field name="type_building" />
+                <field name="number_floors" optional="hide" />
+                <field name="number_elevators" optional="hide" />
+                <field name="number_units" optional="hide" />
+                <field name="number_parking" optional="hide" />
+                <field name="property_usage"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="building_details_form_view" model="ir.ui.view">
+        <field name="name">building.details.form.view</field>
+        <field name="model">building.details</field>
+        <field name="arch" type="xml">
+            <form string="Building Details" >
+
+
+                        <group colspan="4" col="4">
+
+                            <field name="name"/>
+                            <field name="type_building" />
+                            <field name="number_floors" optional="hide" />
+                            <field name="number_elevators" optional="hide" />
+                            <field name="number_units" optional="hide" />
+                            <field name="number_parking" optional="hide" />
+
+                            <field name="property_usage"/>
+
+                    </group>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="contracts_building" model="ir.actions.act_window">
+        <field name="name">Contracts Building</field>
+        <field name="res_model">contracts.building</field>
+        <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+    <!-- Typesitems list view -->
+    <record id="contracts_building_tree_view" model="ir.ui.view">
+        <field name="name">contracts.building.tree.view</field>
+        <field name="model">contracts.building</field>
+        <field name="arch" type="xml">
+            <tree string="Contracts Building" >
+                <field name="name"/>
+                <field name="building_name" />
+                <field name="contract_type" optional="hide" />
+                <field name="contract_sealigdate" optional="hide" />
+                <field name="start_date" optional="hide" />
+                <field name="end_date" optional="hide" />
+                <field name="Contract_location" optional="hide" />
+                <field name="rent_pay_cycle" optional="hide" />
+                <field name="total_contract_value" optional="hide" />
+                <field name="requaler_rent_payment" optional="hide" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="contracts_building_form_view" model="ir.ui.view">
+        <field name="name">contracts.building.form.view</field>
+        <field name="model">contracts.building</field>
+        <field name="arch" type="xml">
+            <form string="Contracts Building" >
+                <header>
+                        <field name="state" widget="statusbar" readonly="1"/>
+                        <button name="create_scheduled" type="object" string="Create Schedul Pymant"/>
+
+                        <button name="sent_run" type="object" string="Runig" states="new"/>
+                        <button name="sent_end" type="object" string="End" states="run"/>
+                        <button name="sent_cancel" type="object" string="Cancel" states="run"/>
+
+                        <button name="sent_new" type="object" string="Rest To New" />
+                </header>
+
+                        <group colspan="4" col="4" string="Bluilding INFO 1">
+                            <field name="name"/>
+                            <field name="building_name" />
+                            <field name="contract_type"/>
+                            <field name="Contract_location"/>
+                            <field name="contract_sealigdate"/>
+                            <field name="rent_pay_cycle"/>
+                            <field name="start_date" />
+                            <field name="end_date"/>
+                        </group>
+                        <group colspan="4" col="4">
+                            <field name="total_contract_value"/>
+                            <field name="requaler_rent_payment"  />
+                            <field name="analytic_account_id"/>
+                       </group>
+
+                <notebook>
+                        <page string="scheduled payment">
+                            <field name="scheduled_payment_ids" >
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="no_invoice" optional="hide" />
+                                    <field name="building_name" optional="hide"  />
+                                    <field name="rent_pay_cycle" optional="hide" />
+                                    <field name="start_date" optional="hide" />
+                                    <field name="end_date" optional="hide" />
+                                    <field name="total_contract_value" optional="hide"/>
+                                    <field name="requaler_rent_payment" optional="hide"/>
+                                   <field name="analytic_account_id" optional="hide" />
+                                    <field name="payment_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                </notebook>
+
+
+            </form>
+        </field>
+    </record>
+     <record id="contracts_building_form_view_piovt" model="ir.ui.view">
+        <field name="name">contracts.building.form.view.piovt</field>
+        <field name="model">contracts.building</field>
+        <field name="arch" type="xml">
+            <pivot string="contractssbuilding" sample="1">
+                <field name="name" type="row"/>
+
+                </pivot>
+        </field>
+    </record>
+
+
+    <!-- Typesitems list view -->
+    <record id="scheduled_payment_tree_view" model="ir.ui.view">
+        <field name="name">scheduled.payment.tree.view</field>
+        <field name="model">scheduled.payment</field>
+        <field name="arch" type="xml">
+            <tree string="Scheduled Payment" decoration-info="state == 'not_paid'" >
+                <field name="name"/>
+                <field name="building_name" />
+                <field name="start_date" optional="hide" />
+                <field name="end_date" optional="hide" />
+                <field name="payment_date"/>
+                <field name="rent_pay_cycle" optional="hide" />
+                <field name="total_contract_value" optional="hide" />
+                <field name="requaler_rent_payment" optional="hide" />
+                <field name="analytic_account_id" optional="hide" />
+                 <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="scheduled_payment_form_view" model="ir.ui.view">
+        <field name="name">scheduled.payment.form.view</field>
+        <field name="model">scheduled.payment</field>
+        <field name="arch" type="xml">
+            <form string="Scheduled Payment" >
+                <header>
+                        <field name="state" widget="statusbar" readonly="1"/>
+
+                        <button name="partner_contrcat" type="object" string="Crdul Pymant"/>
+                        <button name="sent_paid" type="object" string="Paid" states="not_paid" />
+                       <button name="sent_notpaid" type="object" string="Rest draft" states="paid" />
+                </header>
+
+                        <group colspan="4" col="4" string="Bluilding INFO 1">
+                            <field name="name"/>
+                            <field name="no_invoice"/>
+                            <field name="building_name" />
+                            <field name="rent_pay_cycle"/>
+                            <field name="start_date" />
+                            <field name="end_date"/>
+                            <field name="employee_id"/>
+
+                            <field name="total_contract_value"/>
+                            <field name="requaler_rent_payment"  />
+                            <field name="payment_date"/>
+                            <field name="analytic_account_id"/>
+                       </group>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="scheduled_payment_form_view_povit" model="ir.ui.view">
+        <field name="name">scheduled.payment.form.view.povit</field>
+        <field name="model">scheduled.payment</field>
+        <field name="arch" type="xml">
+            <pivot string="scheduled payment" sample="1">
+                <field name="name" type="row"/>
+
+                </pivot>
+        </field>
+    </record>
+
+    <record id="scheduled_payment_action" model="ir.actions.act_window">
+        <field name="name">scheduled payment</field>
+        <field name="res_model">scheduled.payment</field>
+        <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+
+    
+
+        <menuitem id="root_cntracts_bulding" name="Contracts Buldings" groups="contracs_realstate.group_building_details">
+            <menuitem id="building_details" name="Building Details">
+                <menuitem id="building_details_enter" name="Building" action="building_details_action"/>
+                <menuitem id="contracts_building-menu" name="Contracts Building" action="contracts_building"/>
+            </menuitem>
+            <menuitem id="scheduled_payment" name="Scheduled Payment Contract">
+                 <menuitem id="scheduled_payment_action_id" name="Scheduled Payment" action="scheduled_payment_action"/>
+            </menuitem>
+        </menuitem>
+
+
+
+
+
+
+   </data>
+</odoo>
+

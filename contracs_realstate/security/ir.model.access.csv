@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_building_details,building.details,model_building_details,contracs_realstate.group_building_details,1,1,1,1
+access_contracts_building,contracts.building,model_contracts_building,contracs_realstate.group_building_details,1,1,1,1
+
+
+access_scheduled_payment,scheduled.payment,model_scheduled_payment,contracs_realstate.group_building_details,1,1,1,1
+
+
+

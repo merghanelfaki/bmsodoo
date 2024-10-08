@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+
+                <!-- add 72 hours add by merghani-->
+        <record id="direct_invoicing_72_hours_cron" model="ir.cron">
+            <field name="name">Direct Invoicing 72 Hours Cron</field>
+            <field name="model_id" ref="model_stock_picking"/>
+            <field name="state">code</field>
+            <field name="code">model.partner_scheduled_invoicing('72_hours')</field>
+            <field name="interval_number">3</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=3)).strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="active" eval="True"/>
+            <field name="doall" eval="False"/>
+        </record>
+
+                        <!-- add 24 hours add by merghani-->
+        <record id="direct_invoicing_24_hours_cron" model="ir.cron">
+            <field name="name">Direct Invoicing 24 Hours Cron</field>
+            <field name="model_id" ref="model_stock_picking"/>
+            <field name="state">code</field>
+            <field name="code">model.partner_scheduled_invoicing('24_hours')</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="active" eval="True"/>
+            <field name="doall" eval="False"/>
+        </record>
+        <!-- add 48 hours add by merghani-->
+        <record id="direct_invoicing_48_hours_cron" model="ir.cron">
+            <field name="name">Direct Invoicing 48 Hours Cron</field>
+            <field name="model_id" ref="model_stock_picking"/>
+            <field name="state">code</field>
+            <field name="code">model.partner_scheduled_invoicing('48_hours')</field>
+            <field name="interval_number">2</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S')" />
+            <field name="active" eval="True"/>
+            <field name="doall" eval="False"/>
+        </record>
+    </data>
+</odoo>

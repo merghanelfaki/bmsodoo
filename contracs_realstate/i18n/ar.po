@@ -1,0 +1,539 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* contracs_realstate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20240918\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-07 12:21+0000\n"
+"PO-Revision-Date: 2024-10-07 12:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__state__not_paid
+msgid " Not Paid"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:mail.template,body_html:contracs_realstate.eit_contract_scheduled_paymentl_befor_due
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-esc=\"object.employee_id.name\"/>,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <center>\n"
+"                            <strong>BMS GHARBALAH IND CO.</strong>\n"
+"                        </center>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Overdue payment alert message  <t t-esc=\"object.building_name.name\"/>,  Date Due <t t-esc=\"object.payment_date\"/>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: contracs_realstate
+#: model:mail.template,body_html:contracs_realstate.eit_contract_scheduled_paymentl22
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-esc=\"object.employee_id.name\"/>,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <center>\n"
+"                            <strong>BMS GHARBALAH IND CO.</strong>\n"
+"                        </center>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Overdue payment alert message  <t t-esc=\"object.building_name.name\"/>,date Due <t t-esc=\"object.payment_date\"/>,\n"
+"                        <br/>\n"
+"                   Thank you again for choosing <strong>BMS Gharbalah Industry Company</strong>, and we look forward to providing you with the best service possible\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: contracs_realstate
+#: model:mail.template,body_html:contracs_realstate.eit_contract_scheduled_paymentl_due_date
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-esc=\"object.employee_id.name\"/>,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <center>\n"
+"                            <strong>BMS GHARBALAH IND CO.</strong>\n"
+"                        </center>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Today is the payment due for  <t t-esc=\"object.building_name.name\"/>,  Date Due <t t-esc=\"object.payment_date\"/>\n"
+"                        <br/><center>Please pay and change the status to paid</center>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: contracs_realstate
+#: model:mail.template,body_html:contracs_realstate.eit_contract_scheduled_paymentl_after_due_date
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-esc=\"object.employee_id.name\"/>,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <center>\n"
+"                            <strong>BMS GHARBALAH IND CO.</strong>\n"
+"                        </center>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        You have not paid the due amount. <t t-esc=\"object.building_name.name\"/>,  Date Due <t t-esc=\"object.payment_date\"/>\n"
+"                        <br/><center>If you have already paid, please update the system</center>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: contracs_realstate
+#: model:mail.template,body_html:contracs_realstate.eit_contract_scheduled_paymentl1
+#: model:mail.template,body_html:contracs_realstate.eit_contract_scheduled_paymentl2
+#: model:mail.template,body_html:contracs_realstate.eit_contract_scheduled_paymentl21
+#: model:mail.template,body_html:contracs_realstate.eit_contract_scheduled_paymentl3
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear <t t-esc=\"object.employee_id.name\"/>,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Thank you for choosing <strong>BMS GHARBALAH IND CO.</strong>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Your purchase order invoice and delivery was sent and is attached to this email.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        If you have any inquiries, we would be delighted to assist you, so please contact me at <a href=\"mailto:complaint@bm.com.sa\">complaint@bm.com.sa</a>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        We Thank you again for choosing <strong>BMS Gharbalah Industry Company</strong>, and we look forward to providing you with the best service possible\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: contracs_realstate
+#: model:mail.template,subject:contracs_realstate.eit_contract_scheduled_paymentl_after_due_date
+#: model:mail.template,subject:contracs_realstate.eit_contract_scheduled_paymentl_befor_due
+#: model:mail.template,subject:contracs_realstate.eit_contract_scheduled_paymentl_due_date
+msgid "Alert message (Ref {{ object.name or 'n/a' }})"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__analytic_account_id
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__analytic_account_id
+msgid "Analytic Account"
+msgstr "مركز التكلفة"
+
+#. module: contracs_realstate
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_form_view
+msgid "Bluilding INFO 1"
+msgstr "معلومات "
+
+#. module: contracs_realstate
+#: model:ir.ui.menu,name:contracs_realstate.building_details_enter
+msgid "Building"
+msgstr "المبنى"
+
+#. module: contracs_realstate
+#: model:ir.actions.act_window,name:contracs_realstate.building_details_action
+#: model:ir.ui.menu,name:contracs_realstate.building_details
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.building_details_form_view
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.building_details_tree_view
+msgid "Building Details"
+msgstr "بيانات المباني"
+
+#. module: contracs_realstate
+#: model:ir.model,name:contracs_realstate.model_building_details
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__name
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__building_name
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__building_name
+msgid "Building Name"
+msgstr "إسم المبنى"
+
+#. module: contracs_realstate
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__state__cancel
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__property_usage__companies
+msgid "Companies"
+msgstr "شركة"
+
+
+#. module: contracs_realstate
+#: model:res.groups,name:contracs_realstate.group_building_details
+msgid "Conracts Bluding"
+msgstr "عقودات اإيجارات"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__contract_sealigdate
+msgid "Contract Sealing Dtae"
+msgstr "تاريخ إبرام العقد"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__Contract_location
+msgid "Contract Sealing Location"
+msgstr "مكان إبرام العقد"
+
+#. module: contracs_realstate
+#: model:ir.actions.act_window,name:contracs_realstate.contracts_building
+#: model:ir.ui.menu,name:contracs_realstate.contracts_building-menu
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_tree_view
+msgid "Contracts Building"
+msgstr "عقودات الإيجارات"
+
+#. module: contracs_realstate
+#: model:ir.ui.menu,name:contracs_realstate.root_cntracts_bulding
+msgid "Contracts Buldings"
+msgstr "عقودات الإيجارات"
+
+#. module: contracs_realstate
+#: model:ir.model,name:contracs_realstate.model_contracts_building
+msgid "ContractsBuilding"
+msgstr "عقودات الإيجارات"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__contract_type
+msgid "Contrcat Type"
+msgstr "نوع العقد"
+
+#. module: contracs_realstate
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_form_view
+msgid "Crdul Pymant"
+msgstr ""
+
+#. module: contracs_realstate
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
+msgid "Create Schedul Pymant"
+msgstr "أنشئ دفعات"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__create_uid
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__create_uid
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__create_date
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__create_date
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__display_name
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__display_name
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__employee_id
+msgid "Employee Name"
+msgstr "اسم الموظف"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__state__end
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
+msgid "End"
+msgstr "منتهي"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__property_usage__factories
+msgid "Factories"
+msgstr "مصانع"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__property_usage__family_housing
+msgid "Family housing"
+msgstr "سكن عائلي"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__rent_pay_cycle__half
+msgid "Half"
+msgstr "نصف سنوي"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__id
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__id
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__id
+msgid "ID"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:mail.template,name:contracs_realstate.eit_contract_scheduled_paymentl1
+#: model:mail.template,name:contracs_realstate.eit_contract_scheduled_paymentl2
+#: model:mail.template,name:contracs_realstate.eit_contract_scheduled_paymentl21
+#: model:mail.template,name:contracs_realstate.eit_contract_scheduled_paymentl3
+msgid "Invoice: Invoice Confirmation"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:mail.template,report_name:contracs_realstate.eit_contract_scheduled_paymentl22
+#: model:mail.template,report_name:contracs_realstate.eit_contract_scheduled_paymentl_after_due_date
+#: model:mail.template,report_name:contracs_realstate.eit_contract_scheduled_paymentl_befor_due
+#: model:mail.template,report_name:contracs_realstate.eit_contract_scheduled_paymentl_due_date
+msgid ""
+"Invoice_{{ (object.name or '').replace('/','_') }}{{ object.state == "
+"'not_paid' and '_paid' or '' }}"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:mail.template,report_name:contracs_realstate.eit_contract_scheduled_paymentl1
+#: model:mail.template,report_name:contracs_realstate.eit_contract_scheduled_paymentl21
+msgid ""
+"Invoice_{{ (object.name or '').replace('/','_') }}{{ object.state == "
+"'not_payment' and '_payment' or '' }}"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details____last_update
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building____last_update
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__write_uid
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__write_uid
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__write_date
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__write_date
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__rent_pay_cycle__monthly
+msgid "Monthly"
+msgstr "شهري"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_type__new
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__state__new
+msgid "NEW"
+msgstr "جديد"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__name
+msgid "NO Contract"
+msgstr "رقم العقد"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__name
+msgid "No Contract"
+msgstr "رقم العقد"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__no_invoice
+msgid "No Invoice"
+msgstr "رقم الفاتورة"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__number_units
+msgid "Number Of Units"
+msgstr "عدد الوحدات"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__number_parking
+msgid "Number Parking"
+msgstr "عددالمواقف"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__number_elevators
+msgid "Number of elevators"
+msgstr "عدد المصاعد"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__number_floors
+msgid "Number of floors"
+msgstr "عدد الطوابق"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__state__paid
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_form_view
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__property_usage__parking_
+msgid "Parking"
+msgstr "مواقف"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__payment_date
+msgid "Payment Date"
+msgstr "تاريخ الدفعه المجدولة"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__rent_pay_cycle__quarterly
+msgid "Quarterly"
+msgstr "ربعي"
+
+#. module: contracs_realstate
+#: model:ir.actions.server,name:contracs_realstate.reminder_contracts_paid_builduing_cron_ir_actions_server
+#: model:ir.cron,cron_name:contracs_realstate.reminder_contracts_paid_builduing_cron
+#: model:ir.cron,name:contracs_realstate.reminder_contracts_paid_builduing_cron
+msgid "Reminder Paymen contracts building"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__rent_pay_cycle
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__rent_pay_cycle
+msgid "Rent Payment Cycle"
+msgstr "طريقة الدفع"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__requaler_rent_payment
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__requaler_rent_payment
+msgid "Requaler Rent Payment"
+msgstr "دفعة الايجارية الدورية"
+
+#. module: contracs_realstate
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
+msgid "Rest To New"
+msgstr "ارجع لجديد"
+
+#. module: contracs_realstate
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_form_view
+msgid "Rest draft"
+msgstr "ارجاع مسودة"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__state__run
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
+msgid "Runig"
+msgstr "ساري"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__scheduled_payment_ids
+#: model:ir.ui.menu,name:contracs_realstate.scheduled_payment_action_id
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_form_view
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_tree_view
+msgid "Scheduled Payment"
+msgstr "جدولة دفعيات العقودات"
+
+#. module: contracs_realstate
+#: model:ir.ui.menu,name:contracs_realstate.scheduled_payment
+msgid "Scheduled Payment Contract"
+msgstr "جدولة دفعيات العقودات"
+
+#. module: contracs_realstate
+#: model:mail.template,name:contracs_realstate.eit_contract_scheduled_paymentl22
+#: model:mail.template,name:contracs_realstate.eit_contract_scheduled_paymentl_befor_due
+msgid "Scheduled Paymentl"
+msgstr "جدولة دفعيات العقودات"
+
+#. module: contracs_realstate
+#: model:mail.template,name:contracs_realstate.eit_contract_scheduled_paymentl_after_due_date
+msgid "Scheduled Paymentl  after Due date"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:mail.template,name:contracs_realstate.eit_contract_scheduled_paymentl_due_date
+msgid "Scheduled Paymentl Due date"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__state
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__end_date
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__end_date
+msgid "Tenacy End Date"
+msgstr "تاريخ نهاية مدة الإيجار"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__start_date
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__start_date
+msgid "Tenacy Star Date"
+msgstr "تاريخ بداية الإيجار"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__total_contract_value
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__total_contract_value
+msgid "Total Contract Value"
+msgstr "إجمالي قيمة العقد"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__rent_pay_cycle__2_month
+msgid "Tow Month"
+msgstr "كل شهرين"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__type_building
+msgid "Type Of Building"
+msgstr "نوع بناء العقار"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_type__update
+msgid "Update"
+msgstr "تجديد"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__property_usage__warehouses
+msgid "Warehouses"
+msgstr "مخازن"
+
+#. module: contracs_realstate
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__rent_pay_cycle__annually
+msgid "annually"
+msgstr "سنوي"
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__contractsbuilding_id
+msgid "contracts building"
+msgstr "عقود الايجار"
+
+#. module: contracs_realstate
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view_piovt
+msgid "contractssbuilding"
+msgstr ""
+
+#. module: contracs_realstate
+#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__property_usage
+msgid "property usage"
+msgstr "الغرض من إستخدام العقار"
+
+#. module: contracs_realstate
+#: model:ir.actions.act_window,name:contracs_realstate.scheduled_payment_action
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
+#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_form_view_povit
+msgid "scheduled payment"
+msgstr "جدولة"
+
+#. module: contracs_realstate
+#: model:ir.model,name:contracs_realstate.model_scheduled_payment
+msgid "scheduledPayment"
+msgstr ""
