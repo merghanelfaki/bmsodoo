@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_header_footer">
+        <t t-set="ih" t-value="o.with_context(lang=lang)" />
+        <div class="header invoice_info">
+            <div class="row">
+                <div class="col text-center">
+                    <t t-if="ih.partner_id.vat">
+                        <span class="font-weight-bold" dir="rtl" style="font-size:13pt">فاتورة ضريبية Tax Ivoice</span>
+                    </t>
+                    <t t-else="">
+                        <span class="font-weight-bold" dir="rtl" style="font-size:13pt">فاتورة ضريبية مبسطة Simplified Tax Invoice</span>
+                    </t>
+                </div>
+            </div>
+            <div class="row no-gutters text-center mt-3 mr-5 pt-2">
+                <div class="col-5 ">
+                    <span t-field="ih.operating_unit_id.name"/>
+                </div>
+                <div class="col-3">
+                </div>
+                <div class="col-4">
+                    <span t-field="ih.name"></span>
+                </div>
+            </div>
+            <div style="height:15mm; max-height:15mm;" class="row no-gutters mt-3">
+                <div class="col-3 pt-4 text-center">
+                    <span t-field="ih.partner_id.ref"></span>
+                </div>
+                <div class="col-9 text-center">
+                    <p>
+                        <span t-field="ih.partner_id.name"></span><br/>
+                        <span t-field="ih.partner_id.street" t-if="ih.partner_id.street"/><span t-if="ih.partner_id.street and (ih.partner_id.street2 or ih.partner_id.city_id or ih.partner_id.city or ih.partner_id.country)">, </span>
+                        <span t-field="ih.partner_id.street2" t-if="ih.partner_id.street2"/><span t-if="ih.partner_id.street2 and (ih.partner_id.city_id or ih.partner_id.city or ih.partner_id.country)">, </span>
+                        <span t-field="ih.partner_id.city_id" t-if="ih.partner_id.city_id"/><span t-field="ih.partner_id.city" t-if="not ih.partner_id.city_id and ih.partner_id.city"/><span t-if="ih.partner_id.city_id or ih.partner_id.city and ih.partner_id.country_id">, </span><span t-field="ih.partner_id.country_id" t-if="ih.partner_id.country_id"/><span t-if="ih.partner_id.country_id and ih.partner_id.phone">, </span><span t-field="ih.partner_id.phone" t-if="ih.partner_id.phone"/>
+                    </p>
+                </div>
+            </div>
+            <div class="row no-gutters text-center mt-4 mr-5">
+                <div class="col-4 pr-5">
+                    <t t-if="ih.invoice_payment_term_id">
+                        <span t-field="ih.invoice_payment_term_id"></span>
+                    </t>
+                    <t t-elif="ih.partner_id.property_payment_term_id">
+                        <span t-field="ih.partner_id.property_payment_term_id"></span>
+                    </t>
+                    <t t-else="">
+                        <span t-field="ih.invoice_date_due"/>
+                    </t>
+                </div>
+                <div class="col-4 pl-2">
+                    <t t-if="ih.invoice_payment_term_id.id == 1">
+                        <span>Cash</span>
+                    </t>
+                    <t t-else="">
+                        <span>Credit</span>
+                    </t>
+                </div>
+                <div class="col-4 pl-3">
+                    <span t-field="ih.invoice_date"></span>
+                </div>
+            </div>
+            <div class="row no-gutters text-center mt-3 mr-5 pt-1">
+                <div class="col-4 pr-5">
+                    <span t-field="ih.user_id"></span>
+                </div>
+                <div class="col-4">
+                    <span t-field="ih.partner_id.vat"></span>
+                </div>
+                <div class="col-4 pl-3">
+                    <span t-field="ih.ref"></span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div style="height:7mm;" class="row no-gutters text-left mr-n4 pt-2">
+                <div class="col-10"></div>
+                <div class="col-2" t-esc="'{:,.2f}'.format(ih.amount_untaxed)"></div>
+            </div>
+            <div style="height:7mm;" class="row no-gutters text-left mt-3 mr-n4 pt-1">
+                <div class="col-10"></div>
+                <div class="col-2" t-esc="'{:,.2f}'.format(ih.amount_tax)"></div>
+            </div>
+            <div style="height:7mm;" class="row no-gutters text-left mt-3 mr-n4 pt-1">
+                <div class="col-10"></div>
+                <div class="col-2" t-esc="'{:,.2f}'.format(ih.amount_untaxed)"></div>
+            </div>
+            <div style="height:7mm;" class="row no-gutters mt-3 mr-n4 pt-1">
+                <div class="col-7 mt-n4 text-center" t-esc="ih.currency_id.amount_to_text(ih.amount_total)"></div>
+                <div class="col-3"></div>
+                <div class="col-2" t-esc="'{:,.2f}'.format(ih.amount_total)"></div>
+            </div>
+            <div style="text-right; background-color:#FFF" class="mt-5 pt-5" >
+                <t t-esc="o.generate_qr_code()"/>
+                <div class="mt-5 pt-2">
+                    <img t-att-src="image_data_uri(o.qr_code)" class="mt-5" style="max-height: 125px;" alt="QR Code"/>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>
