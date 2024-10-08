@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<odoo>
-        <template id="account_invoice_report_inherit" inherit_id="account.report_invoice_document">
-        </template>
-</odoo>
