@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="group_building_details" model="res.groups">
+            <field name="name">Conracts Bluding</field>
+        </record>
+
+
+        <!-- apply record rules for user -->
+        <!--record id="estate_rule_personal" model="ir.rule">
+            <field name="name">Estate Property Personal</field>
+            <field ref="real_estate_2.model_estate_property" name="model_id"/>
+            <field name="domain_force">['|',('salesperson_id','=',user.id),('salesperson_id','=',False)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        </record-->
+        <!-- apply record rules for manager >
+        <record id="estate_rule_global" model="ir.rule">
+            <field name="name">Estate Property Manager</field>
+            <field ref="model_estate_property" name="model_id"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('real_estate_2.group_estate_property_manager'))]"/>
+        </record-->
+    </data>
+</odoo>
