@@ -4,7 +4,7 @@ from odoo.exceptions import AccessError
 from odoo.fields import Many2one
 
 
-#
+##########
 class PurchaseOrderInherit(models.Model):
     _inherit = 'purchase.order'
     purchase_type = fields.Selection([
