@@ -10,7 +10,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Typesitems list view -->
+    <!-- Typesitems list 22222222222222222222222222222222222222222222view -->
     <record id="building_details_tree_view" model="ir.ui.view">
         <field name="name">building.details.tree.view</field>
         <field name="model">building.details</field>
