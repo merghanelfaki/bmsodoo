@@ -13,7 +13,7 @@ from odoo.exceptions import UserError, ValidationError
 from odoo.tools import translate
 
 
-######################################merghani elfaki##############################################################
+######################################merghani elfaki#00000#########################
 class Buildingdetails(models.Model):
     _name = 'building.details'
     _description = 'Building Name'
