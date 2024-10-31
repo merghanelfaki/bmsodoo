@@ -9,7 +9,7 @@ from datetime import date, datetime, timedelta
 from odoo.tools import translate
 
 
-########################################################################################################################
+###################################merghani################################################################################
 class Buildingdetails(models.Model):
     _name = 'building.details'
     _description = 'Building Name'
