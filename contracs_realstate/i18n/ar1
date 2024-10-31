@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0+e-20240918\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 09:26+0000\n"
-"PO-Revision-Date: 2024-10-23 09:26+0000\n"
+"POT-Creation-Date: 2024-10-17 11:05+0000\n"
+"PO-Revision-Date: 2024-10-17 11:05+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #. module: contracs_realstate
 #: model:ir.ui.menu,name:contracs_realstate.building_details
 msgid " Configration All Contracts"
-msgstr "العقودات والإيجارات"
+msgstr "العقود والإيجارات"
 
 #. module: contracs_realstate
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__state__not_paid
@@ -104,7 +104,6 @@ msgstr ""
 #. module: contracs_realstate
 #: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__analytic_account_id
 #: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__analytic_account_id
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_search_view
 msgid "Analytic Account"
 msgstr "مركز التكلفة"
 
@@ -115,23 +114,15 @@ msgid "Bluilding INFO 1"
 msgstr "معلومات "
 
 #. module: contracs_realstate
-#: model:ir.actions.act_window,name:contracs_realstate.building_action
-#: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__contract_to__building
-#: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_to__building
-#: model:ir.ui.menu,name:contracs_realstate.building_action-menu
-msgid "Building"
-msgstr "عقودات إيجار المباني"
-
-#. module: contracs_realstate
 #: model:ir.ui.menu,name:contracs_realstate.building_details_enter
 msgid "Building /licenses"
-msgstr "الايجارات والرخص"
+msgstr "عقودات الإيجارات والترخيص"
 
 #. module: contracs_realstate
 #: model_terms:ir.ui.view,arch_db:contracs_realstate.building_details_form_view
 #: model_terms:ir.ui.view,arch_db:contracs_realstate.building_details_tree_view
 msgid "Building Details"
-msgstr "بيانات أولية"
+msgstr "معلومات الايجارات والترخيص"
 
 #. module: contracs_realstate
 #: model:ir.model,name:contracs_realstate.model_building_details
@@ -139,7 +130,7 @@ msgstr "بيانات أولية"
 #: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__building_name
 #: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__building_name
 msgid "Building Name"
-msgstr "ألاسم-الرخصة"
+msgstr "إسم العقد/المبنى"
 
 #. module: contracs_realstate
 #: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
@@ -160,6 +151,7 @@ msgstr "إستمارات السيارات"
 #. module: contracs_realstate
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__contract_to__car_licenses
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_to__car_licenses
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__contract_to__car_licenses
 msgid "Car licenses"
 msgstr "إستمارات السيارات"
 
@@ -176,17 +168,7 @@ msgstr "العقودات والايجارات"
 #. module: contracs_realstate
 #: model:res.groups,name:contracs_realstate.group_building_details
 msgid "Conracts Bluding"
-msgstr "عقودات اإيجارات"
-
-#. module: contracs_realstate
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_search_view
-msgid "Contarcts"
-msgstr "العقودات"
-
-#. module: contracs_realstate
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_search_view
-msgid "Contract"
-msgstr "العقود"
+msgstr "عقودات - إيجارات"
 
 #. module: contracs_realstate
 #: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__contract_sealigdate
@@ -203,50 +185,39 @@ msgstr "مكان إبرام العقد"
 #: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__contract_to
 #: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__contract_to
 msgid "Contract To"
-msgstr "نوع العقد"
-
-#. module: contracs_realstate
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_search_view
-msgid "Contract to"
-msgstr "نوع العقد"
-
-#. module: contracs_realstate
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view_graph
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_form_view_graph
-msgid "Contracts"
-msgstr ""
+msgstr "العقد الي "
 
 #. module: contracs_realstate
 #: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
 #: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_tree_view
 msgid "Contracts Building"
-msgstr " عقودات الإيجارات والرخص"
+msgstr "عقودات الإيجارات"
 
 #. module: contracs_realstate
 #: model:ir.actions.act_window,name:contracs_realstate.contracts_building
 #: model:ir.ui.menu,name:contracs_realstate.contracts_building-menu
 msgid "Contracts Building/licenses"
-msgstr "عقودات الإيجارات ورخص"
+msgstr "عقودات الإيجارات"
 
 #. module: contracs_realstate
 #: model:ir.ui.menu,name:contracs_realstate.root_cntracts_bulding
 msgid "Contracts Buldings"
-msgstr "عقودات الإيجارات ورخص"
+msgstr "عقودات الإيجارات"
 
 #. module: contracs_realstate
 #: model:ir.model,name:contracs_realstate.model_contracts_building
 msgid "ContractsBuilding"
-msgstr "عقودات الإيجارات ورخص"
+msgstr "عقودات الإيجارات"
 
 #. module: contracs_realstate
 #: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__contract_type
 msgid "Contrcat Type"
-msgstr "طبيعة العقد"
+msgstr "نوع العقد"
 
 #. module: contracs_realstate
 #: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_form_view
 msgid "Crdul Pymant"
-msgstr " الدفعات"
+msgstr ""
 
 #. module: contracs_realstate
 #: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view
@@ -268,11 +239,6 @@ msgid "Created on"
 msgstr ""
 
 #. module: contracs_realstate
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_search_view
-msgid "Dayment Date"
-msgstr ""
-
-#. module: contracs_realstate
 #: model:ir.model.fields,field_description:contracs_realstate.field_building_details__display_name
 #: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__display_name
 #: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__display_name
@@ -283,12 +249,12 @@ msgstr ""
 #: model:ir.actions.act_window,name:contracs_realstate.drivers_cards_action
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__contract_to__drivers_cards
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_to__drivers_cards
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__contract_to__drivers_cards
 #: model:ir.ui.menu,name:contracs_realstate.drivers_cards_action-menu
 msgid "Drivers cards"
 msgstr "رخص كروت السائقين"
 
 #. module: contracs_realstate
-#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__employee_id
 #: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__employee_id
 msgid "Employee Name"
 msgstr "اسم الموظف"
@@ -300,11 +266,6 @@ msgid "End"
 msgstr "منتهي"
 
 #. module: contracs_realstate
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_search_view
-msgid "End Date"
-msgstr "نهاية العقد"
-
-#. module: contracs_realstate
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__property_usage__factories
 msgid "Factories"
 msgstr "مصانع"
@@ -313,11 +274,6 @@ msgstr "مصانع"
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__property_usage__family_housing
 msgid "Family housing"
 msgstr "سكن عائلي"
-
-#. module: contracs_realstate
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_search_view
-msgid "Group By"
-msgstr ""
 
 #. module: contracs_realstate
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__rent_pay_cycle__half
@@ -378,11 +334,6 @@ msgid "NO Contract"
 msgstr "رقم العقد"
 
 #. module: contracs_realstate
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_search_view
-msgid "NO Contracts"
-msgstr "رقم العقد"
-
-#. module: contracs_realstate
 #: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__name
 msgid "No Contract"
 msgstr "رقم العقد"
@@ -391,13 +342,6 @@ msgstr "رقم العقد"
 #: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__no_invoice
 msgid "No Invoice"
 msgstr "رقم الفاتورة"
-
-#. module: contracs_realstate
-#: model:ir.model.fields,field_description:contracs_realstate.field_building_details__number
-#: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__number
-#: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__number
-msgid "Number"
-msgstr "رقم (الرخصة-المنشاة)"
 
 #. module: contracs_realstate
 #: model:ir.model.fields,field_description:contracs_realstate.field_building_details__number_units
@@ -439,6 +383,7 @@ msgstr "تاريخ الدفعه المجدولة"
 #: model:ir.actions.act_window,name:contracs_realstate.power_subscription_action
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__contract_to__power_subscription_
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_to__power_subscription_
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__contract_to__power_subscription_
 #: model:ir.ui.menu,name:contracs_realstate.power_subscription_action-menu
 msgid "Power subscription"
 msgstr "اشتراك قوة"
@@ -447,6 +392,7 @@ msgstr "اشتراك قوة"
 #: model:ir.actions.act_window,name:contracs_realstate.quarry_licenses_action
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__contract_to__quarry_licenses
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_to__quarry_licenses
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__contract_to__quarry_licenses
 #: model:ir.ui.menu,name:contracs_realstate.quarry_licenses_action-menu
 msgid "Quarry licenses"
 msgstr " رخص المحاجر"
@@ -484,6 +430,7 @@ msgstr "اشتراك مقيم"
 #. module: contracs_realstate
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__contract_to__resident_subscription_
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_to__resident_subscription_
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__contract_to__resident_subscription_
 msgid "Resident subscription"
 msgstr "اشتراك مقيم"
 
@@ -532,16 +479,6 @@ msgid "Scheduled Paymentl Due date"
 msgstr ""
 
 #. module: contracs_realstate
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_search_view
-msgid "Start Date"
-msgstr "تاريخ الباداية"
-
-#. module: contracs_realstate
-#: model_terms:ir.ui.view,arch_db:contracs_realstate.scheduled_payment_search_view
-msgid "State"
-msgstr "الحالة"
-
-#. module: contracs_realstate
 #: model:ir.model.fields,field_description:contracs_realstate.field_contracts_building__state
 #: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__state
 msgid "Status"
@@ -556,6 +493,7 @@ msgstr "اشتراك تم"
 #. module: contracs_realstate
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__contract_to__subscribe_done_
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_to__subscribe_done_
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__contract_to__subscribe_done_
 msgid "Subscribe done"
 msgstr "اشتراك تم"
 
@@ -596,6 +534,11 @@ msgstr "تجديد"
 #: model:ir.actions.act_window,name:contracs_realstate.vehicle_license_action
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__contract_to__vehicle_license
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_to__vehicle_license
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__contract_to__vehicle_license
+msgid "Vehicle operating license"
+msgstr "رخصة تشغيل السيارات"
+
+#. module: contracs_realstate
 #: model:ir.ui.menu,name:contracs_realstate.vehicle_license_action-menu
 msgid "Vehicle operating license"
 msgstr "رخصة تشغيل السيارات"
@@ -604,6 +547,7 @@ msgstr "رخصة تشغيل السيارات"
 #: model:ir.actions.act_window,name:contracs_realstate.wage_subscription_action
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__building_details__contract_to__wage_subscription_
 #: model:ir.model.fields.selection,name:contracs_realstate.selection__contracts_building__contract_to__wage_subscription_
+#: model:ir.model.fields.selection,name:contracs_realstate.selection__scheduled_payment__contract_to__wage_subscription_
 #: model:ir.ui.menu,name:contracs_realstate.wage_subscription_action-menu
 msgid "Wage Protection Subscription"
 msgstr "اشتراك حماية الاجور"
@@ -620,8 +564,8 @@ msgstr "سنوي"
 
 #. module: contracs_realstate
 #: model:ir.model.fields,field_description:contracs_realstate.field_scheduled_payment__contractsbuilding_id
-msgid "contracts building relation"
-msgstr ""
+msgid "contracts building"
+msgstr "عقود الايجار"
 
 #. module: contracs_realstate
 #: model_terms:ir.ui.view,arch_db:contracs_realstate.contracts_building_form_view_piovt
@@ -643,4 +587,4 @@ msgstr "جدولة"
 #. module: contracs_realstate
 #: model:ir.model,name:contracs_realstate.model_scheduled_payment
 msgid "scheduledPayment"
-msgstr "جدولة الدفعات"
+msgstr ""

@@ -5,7 +5,7 @@
     <!--  #########3    types items           ##########                          -->
     <!-- Typesitems action -->
     <record id="building_details_action" model="ir.actions.act_window">
-        <field name="name">Building Details</field>
+        <field name="name">Configration All Contracts</field>
         <field name="res_model">building.details</field>
         <field name="view_mode">tree,form</field>
     </record>
@@ -18,11 +18,13 @@
             <tree string="Building Details" >
                 <field name="name"/>
                 <field name="type_building" />
-                <field name="number_floors" optional="hide" />
-                <field name="number_elevators" optional="hide" />
-                <field name="number_units" optional="hide" />
-                <field name="number_parking" optional="hide" />
-                <field name="property_usage"/>
+                <field name="contract_to" />
+                <field name="number" optional="hide" attrs="{'invisible':[('contract_to','=','building')]}" />
+                <field name="number_floors" optional="hide" attrs="{'invisible':[('contract_to','!=','building')]}" />
+                <field name="number_elevators" optional="hide" attrs="{'invisible':[('contract_to','!=','building')]}"/>
+                <field name="number_units" optional="hide" attrs="{'invisible':[('contract_to','!=','building')]}"/>
+                <field name="number_parking" optional="hide" attrs="{'invisible':[('contract_to','!=','building')]}"/>
+                <field name="property_usage" attrs="{'invisible':[('contract_to','!=','building')]}"/>
 
             </tree>
         </field>
@@ -33,19 +35,16 @@
         <field name="model">building.details</field>
         <field name="arch" type="xml">
             <form string="Building Details" >
-
-
                         <group colspan="4" col="4">
-
+                            <field name="contract_to" />
                             <field name="name"/>
-                            <field name="type_building" />
-                            <field name="number_floors" optional="hide" />
-                            <field name="number_elevators" optional="hide" />
-                            <field name="number_units" optional="hide" />
-                            <field name="number_parking" optional="hide" />
-
-                            <field name="property_usage"/>
-
+                            <field name="type_building"  />
+                            <field name="number" attrs="{'invisible':[('contract_to','=','building')]}"/>
+                            <field name="number_floors" attrs="{'invisible':[('contract_to','!=','building')]}" />
+                            <field name="number_elevators" attrs="{'invisible':[('contract_to','!=','building')]}"/>
+                            <field name="number_units" attrs="{'invisible':[('contract_to','!=','building')]}" />
+                            <field name="number_parking" attrs="{'invisible':[('contract_to','!=','building')]}"/>
+                            <field name="property_usage" attrs="{'invisible':[('contract_to','!=','building')]}"/>
                     </group>
 
             </form>
@@ -53,9 +52,9 @@
     </record>
 
     <record id="contracts_building" model="ir.actions.act_window">
-        <field name="name">Contracts Building</field>
+        <field name="name">Contracts Building/licenses</field>
         <field name="res_model">contracts.building</field>
-        <field name="view_mode">tree,form,pivot</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
     </record>
 
     <!-- Typesitems list view -->
@@ -64,9 +63,13 @@
         <field name="model">contracts.building</field>
         <field name="arch" type="xml">
             <tree string="Contracts Building" >
+
+                <field name="contract_to" />
                 <field name="name"/>
                 <field name="building_name" />
-                <field name="contract_type" optional="hide" />
+
+                <field name="number" optional="hide"/>
+                <field name="contract_type" optional="hide"/>
                 <field name="contract_sealigdate" optional="hide" />
                 <field name="start_date" optional="hide" />
                 <field name="end_date" optional="hide" />
@@ -96,6 +99,8 @@
 
                         <group colspan="4" col="4" string="Bluilding INFO 1">
                             <field name="name"/>
+
+                            <field name="contract_to" />
                             <field name="building_name" />
                             <field name="contract_type"/>
                             <field name="Contract_location"/>
@@ -103,27 +108,37 @@
                             <field name="rent_pay_cycle"/>
                             <field name="start_date" />
                             <field name="end_date"/>
+
                         </group>
                         <group colspan="4" col="4">
                             <field name="total_contract_value"/>
                             <field name="requaler_rent_payment"  />
                             <field name="analytic_account_id"/>
                        </group>
+                      <group>
+                            <field name="employee_id"/>
+                      </group>
 
                 <notebook>
                         <page string="scheduled payment">
                             <field name="scheduled_payment_ids" >
                                 <tree editable="bottom">
                                     <field name="name"/>
-                                    <field name="no_invoice" optional="hide" />
+                                    <field name="contract_to" />
+
+                                     <field name="number" optional="hide"/>
                                     <field name="building_name" optional="hide"  />
                                     <field name="rent_pay_cycle" optional="hide" />
                                     <field name="start_date" optional="hide" />
                                     <field name="end_date" optional="hide" />
+                                    <field name="no_invoice" optional="hide" />
+
+                                      <field name="employee_id" optional="hide" />
                                     <field name="total_contract_value" optional="hide"/>
-                                    <field name="requaler_rent_payment" optional="hide"/>
+                                    <field name="requaler_rent_payment"/>
                                    <field name="analytic_account_id" optional="hide" />
                                     <field name="payment_date"/>
+                                    <field name="state" />
                                 </tree>
                             </field>
                         </page>
@@ -133,13 +148,21 @@
             </form>
         </field>
     </record>
+        <record model="ir.ui.view" id="contracts_building_form_view_graph">
+        <field name="name">contracts.building.form.view.graph</field>
+        <field name="model">contracts.building</field>
+        <field name="arch" type="xml">
+            <graph string="Contracts" sample="1">
+                <field name="name"/>
+            </graph>
+        </field>
+    </record>
      <record id="contracts_building_form_view_piovt" model="ir.ui.view">
         <field name="name">contracts.building.form.view.piovt</field>
         <field name="model">contracts.building</field>
         <field name="arch" type="xml">
             <pivot string="contractssbuilding" sample="1">
                 <field name="name" type="row"/>
-
                 </pivot>
         </field>
     </record>
@@ -152,6 +175,7 @@
         <field name="arch" type="xml">
             <tree string="Scheduled Payment" decoration-info="state == 'not_paid'" >
                 <field name="name"/>
+                <field name="contract_to" />
                 <field name="building_name" />
                 <field name="start_date" optional="hide" />
                 <field name="end_date" optional="hide" />
@@ -180,6 +204,7 @@
 
                         <group colspan="4" col="4" string="Bluilding INFO 1">
                             <field name="name"/>
+                            <field name="contract_to" />
                             <field name="no_invoice"/>
                             <field name="building_name" />
                             <field name="rent_pay_cycle"/>
@@ -194,6 +219,76 @@
                        </group>
 
             </form>
+        </field>
+    </record>
+     <record id="scheduled_payment_search_view" model="ir.ui.view">
+        <field name="name">scheduled.payment.search.view</field>
+        <field name="model">scheduled.payment</field>
+        <field name="arch" type="xml">
+            <search string="Contract">
+
+                <field name="contract_to"/>
+                <field name="analytic_account_id"/>
+                <field name="name"/>
+                <field name="building_name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state"/>
+                <field name="end_date"/>
+
+                <field name="payment_date"/>
+
+                <separator/>
+
+                <group string="Group By">
+                    <filter
+                            string=" Contract to"
+                            name="contract_to"
+                            context="{'group_by': 'contract_to'}"/>
+                    <filter
+                            string="NO Contracts"
+                            name="name"
+                            context="{'group_by': 'name'}"/>
+                    <filter
+                            string="Analytic Account"
+                            name="analytic_account_id"
+                            context="{'group_by': 'analytic_account_id'}"/>
+
+                    <filter
+                            string="Start Date"
+                            name="start_date"
+                            context="{'group_by': 'start_date'}"/>
+
+                    <filter
+                            string="End Date"
+                            name="end_date"
+                            context="{'group_by': 'end_date'}"/>
+                    <filter
+                            string="Contarcts"
+                            name="building_name"
+                            context="{'group_by': 'building_name'}"/>
+
+                    <filter
+                            string="State"
+                            name="state_id"
+                            context="{'group_by': 'state'}"/>
+                    <filter
+                            string="Dayment Date"
+                            name="payment_date"
+                            context="{'group_by': 'payment_date'}"/>
+
+                                    </group>
+            </search>
+        </field>
+    </record>
+
+      <record model="ir.ui.view" id="scheduled_payment_form_view_graph">
+        <field name="name">scheduled.payment.form.view.graph</field>
+        <field name="model">scheduled.payment</field>
+        <field name="arch" type="xml">
+            <graph string="Contracts" sample="1">
+                <field name="name"/>
+            </graph>
         </field>
     </record>
 
@@ -211,16 +306,112 @@
     <record id="scheduled_payment_action" model="ir.actions.act_window">
         <field name="name">scheduled payment</field>
         <field name="res_model">scheduled.payment</field>
-        <field name="view_mode">tree,form,pivot</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
     </record>
+
+        <record model="ir.actions.act_window" id="building_action">
+            <field name="name">Building</field>
+            <field name="res_model">contracts.building</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="domain">[('contract_to', '=', 'building')]</field>
+            <field name="view_id" ref="contracts_building_tree_view"/>
+        </record>
+
+
+
+        <!-- ################رخص الحاجر  ############ -->
+
+
+
+        <record model="ir.actions.act_window" id="quarry_licenses_action">
+            <field name="name">Quarry licenses</field>
+            <field name="res_model">contracts.building</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="domain">[('contract_to', '=', 'quarry_licenses')]</field>
+            <field name="view_id" ref="contracts_building_tree_view"/>
+        </record>
+
+
+                     <!-- ################تشغيل السيارات  ############ -->
+        <record model="ir.actions.act_window" id="vehicle_license_action">
+            <field name="name">Vehicle operating license</field>
+            <field name="res_model">contracts.building</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="domain">[('contract_to', '=', 'vehicle_license')]</field>
+            <field name="view_id" ref="contracts_building_tree_view"/>
+        </record>
+                     <!-- ################كروت السائيقن  ############ -->
+        <record model="ir.actions.act_window" id="drivers_cards_action">
+            <field name="name">Drivers cards</field>
+            <field name="res_model">contracts.building</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="domain">[('contract_to', '=', 'drivers_cards')]</field>
+            <field name="view_id" ref="contracts_building_tree_view"/>
+        </record>
+                     <!-- ################قوة ############ -->
+        <record model="ir.actions.act_window" id="power_subscription_action">
+            <field name="name">Power subscription</field>
+            <field name="res_model">contracts.building</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="domain">[('contract_to', '=', 'power_subscription')]</field>
+            <field name="view_id" ref="contracts_building_tree_view"/>
+        </record>
+                     <!-- ################مقيم  ############ -->
+        <record model="ir.actions.act_window" id="resident_subscriptionaction_action">
+            <field name="name">Resident Subscription</field>
+            <field name="res_model">contracts.building</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="domain">[('contract_to', '=', 'resident_subscription')]</field>
+            <field name="view_id" ref="contracts_building_tree_view"/>
+        </record>
+
+                <!-- ################تم  ############ -->
+        <record model="ir.actions.act_window" id="subscribe_done_action">
+            <field name="name">Subscribe Done</field>
+            <field name="res_model">contracts.building</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="domain">[('contract_to', '=', 'subscribe_done')]</field>
+            <field name="view_id" ref="contracts_building_tree_view"/>
+
+        </record>
+
+                <!-- ################تشغيل الاجور  ############ -->
+        <record model="ir.actions.act_window" id="wage_subscription_action">
+            <field name="name">Wage Protection Subscription</field>
+            <field name="res_model">contracts.building</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="domain">[('contract_to', '=', 'wage_subscription')]</field>
+            <field name="view_id" ref="contracts_building_tree_view"/>
+         </record>
+                        <!-- ################ترخص السيارات  ############ -->
+        <record model="ir.actions.act_window" id="car_licenses_action">
+            <field name="name">Car Licenses</field>
+            <field name="res_model">contracts.building</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="domain">[('contract_to', '=', 'car_licenses')]</field>
+            <field name="view_id" ref="contracts_building_tree_view"/>
+         </record>
+        <!-- ############################################3333 -->
 
 
     
 
         <menuitem id="root_cntracts_bulding" name="Contracts Buldings" groups="contracs_realstate.group_building_details">
-            <menuitem id="building_details" name="Building Details">
-                <menuitem id="building_details_enter" name="Building" action="building_details_action"/>
-                <menuitem id="contracts_building-menu" name="Contracts Building" action="contracts_building"/>
+            <menuitem id="building_details" name=" Configration All Contracts">
+                <menuitem id="building_details_enter" name="Building /licenses" action="building_details_action"/>
+                <menuitem id="contracts_building-menu" name="Contracts Building/licenses" action="contracts_building"/>
+
+                <menuitem id="building_action-menu" name="Building" action="building_action"/>
+
+
+                 <menuitem id="quarry_licenses_action-menu" name="Quarry licenses" action="quarry_licenses_action"/>
+                 <menuitem id="vehicle_license_action-menu" name="Vehicle operating license" action="vehicle_license_action"/>
+                 <menuitem id="drivers_cards_action-menu" name="Drivers cards" action="drivers_cards_action"/>
+                 <menuitem id="power_subscription_action-menu" name="Power subscription" action="power_subscription_action"/>
+                 <menuitem id="resident_subscriptionaction_action-menu" name="Resident Subscription" action="resident_subscriptionaction_action"/>
+                 <menuitem id="subscribe_done_action-menu" name="Subscribe Done" action="subscribe_done_action"/>
+                 <menuitem id="wage_subscription_action-menu" name="Wage Protection Subscription" action="wage_subscription_action"/>
+                 <menuitem id="car_licenses_actionaction-menu" name="Car Licenses" action="car_licenses_action"/>
             </menuitem>
             <menuitem id="scheduled_payment" name="Scheduled Payment Contract">
                  <menuitem id="scheduled_payment_action_id" name="Scheduled Payment" action="scheduled_payment_action"/>

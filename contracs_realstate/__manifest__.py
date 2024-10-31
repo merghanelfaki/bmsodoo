@@ -1,6 +1,6 @@
 {
     'name': 'Conracts Bluding',
-    'depends': ['base','account','hr'],
+    'depends': ['base','account','hr','analytic'],
     'author': 'merghani elfaki ',
     'description': """ This module Conracts Bluding""",
     'data': [
