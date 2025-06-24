@@ -17,7 +17,7 @@ from odoo.tools import translate
 class Buildingdetails(models.Model):
     _name = 'building.details'
     _description = 'Building Name'
-
+    type_building22 = fields.Char(string='Type Of Building',translate=True)
     name = fields.Char(string='Building Name',translate=True)
     type_building = fields.Char(string='Type Of Building',translate=True)
     number_floors = fields.Integer(string='Number of floors' )
